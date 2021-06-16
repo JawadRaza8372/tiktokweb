@@ -93,6 +93,7 @@ input:focus {
   padding-bottom: 5px;
   color:#fe2c55;
   background:white;
+  width:90px;
 }
 .followbutton:hover{
   background: #fe2c55 !important;
