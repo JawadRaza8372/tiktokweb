@@ -17,21 +17,8 @@ function Content2() {
           <button className="bigbutton">Login</button>          <hr/>
 
           <p>Suggested Accounts</p>
-          <div style={{overflowY:"auto",maxHeight:"38vh"}}>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-          <PosterUser2 Data={data}/>
-
-          <PosterUser2 Data={data}/>
+          <div style={{overflowY:"auto",height:"38vh"}}>
+          <PosterUser2 userId={"anyid"} description={"des"} creator={true}/>
           </div><hr/>
          <p>© 2021 TikTokweb</p>
         </>

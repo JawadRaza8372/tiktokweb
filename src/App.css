@@ -149,3 +149,23 @@ scroll-snap-type: y mandatory;
 ::-webkit-scrollbar-thumb:hover {
   background: #fe2c55;
 }
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+video::-webkit-media-controls-play-button {
+}
+video::-webkit-media-controls-current-time-display{
+  display: none;
+
+}
+video::-webkit-media-controls-time-remaining-display {
+  display: none;
+
+}
+video::-webkit-media-controls-mute-button {}
+video::-webkit-media-controls-toggle-closed-captions-button {
+  display: none;
+
+}
+video::-webkit-media-controls-volume-slider {}

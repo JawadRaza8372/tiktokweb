@@ -1,9 +1,26 @@
-import React,{useState,useRef} from 'react'
+import React,{useState,useRef,useEffect} from 'react'
 import ReactPlayer from "react-player"
-function MyVideo({ url}) {
+function MyVideo({url}) {
     const [playing, setPlaying] = useState(false);
     const videoRef = useRef(null);
   
+    useEffect(() => {
+      let handlePlay = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoRef.current.play();
+          } else {
+            videoRef.current.pause();
+          }
+        });
+      };
+  
+      let observer = new IntersectionObserver(handlePlay);
+  
+      observer.observe(videoRef.current);
+    });
+
+
     const onVideoPress = () => {
       if (playing) {
         videoRef.current.pause();
@@ -21,6 +38,8 @@ function MyVideo({ url}) {
         onClick={onVideoPress}
         ref={videoRef}
         controls
+        controlsList="nodownload"
+        src={url}
       ></video>
         </div>
     )

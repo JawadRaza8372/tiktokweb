@@ -11,29 +11,23 @@ const path =require("path")
 
 
 
-Router.post('/add',mutlerWare.single('image'), async (req, res, next)=> {
-
+Router.post('/add',mutlerWare.single('video'), async (req, res, next)=> {
    if (req.file){
        console.log("file found")
-    try {
-        const result=await cloudinaryWare.uploader.upload(req.file.path);
-        const image=result.secure_url;
-        const name="jawadd"
-        const newExercise=new  exercise({name,image});
-        await newExercise.save().then(()=>{
-            res.status(201).json("Data added")
-        }).catch(e=>res.json(e));
-
-            
-    } catch (error) {
-        res.status(409).json(error);
-    }
+       const dat=Date.now();
+        const result= await cloudinaryWare.uploader.upload_large(req.file.path,{ resource_type: "video", 
+        public_id: `myfolder/mysubfolder/${req.file.originalname+dat}`,
+        chunk_size: 66000000},
+      function(error, result) {
+        res.status(200).json(result.secure_url);
+        next()
+    } )
     }
     else{
         res.status(409).json("media not found");
+        next()
 
     }
-    next()
         
 });
 
