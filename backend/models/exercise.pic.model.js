@@ -3,10 +3,27 @@ const mongoose=require('mongoose');
 const bcrypt=require('bcrypt');
 
 const exerciseSchema=new mongoose.Schema({
-    name:{
+    userId:{
         type:String,required:true,
-    },image:{
+    },videolink:{
         type:String,required:true,
+    },description:{
+        type:String,required:true,
+    }
+    , track:{
+        type:String,required:true,
+    }
+    , creator:{
+        type:Boolean,required:true,
+
+    }, likes:{
+        type:String,required:true,
+    },shares:{
+        type:String,required:true,
+    }
+    ,comments:{
+        type:String,required:true,
+
     }
 },{
     timestamps:true
