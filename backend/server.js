@@ -2,15 +2,10 @@ const express=require('express');
 const cors=require('cors');
 const mongoose=require('mongoose');
 require('dotenv').config();
-// const BlockByNameRoutes=require("./routes/BlockByNameRoutes");
-// const BlockByNumberRoutes=require("./routes/BlockByNumberRoutes");
-// const BlockByCompanyRoutes=require("./routes/BlockByCompanyRoutes");
-// const CompanyCategoryRoutes=require("./routes/CompanyCategoryRoutes");
-// const SignUp=require("./routes/SignUp");
-// const Login=require("./routes/Login");
-// const CityRoutes=require('./routes/CityRoutes')
-// const userSession=require("./routes/userSession");
-const exerciserout=require("./routes/exercise.pic");
+const SignUp=require("./routes/SignUp");
+const Login=require("./routes/Login");
+const VideoData=require("./routes/VideoData");
+const VideoUploadRoute=require("./routes/VideoUploadRoute");
 const app=express();
 const port=process.env.PORT || 5000;
 
@@ -25,19 +20,10 @@ const connection=mongoose.connection;
 connection.once('open',()=>{
     console.log("mongodb connection is successfull");
 })
-
-// app.use("images")
-// app.use("/blockByName",BlockByNameRoutes);
-// app.use("/blockByNumber",BlockByNumberRoutes);
-// app.use("/blockByCompany",BlockByCompanyRoutes);
-// app.use("/companyCategory",CompanyCategoryRoutes);
-// app.use("/userAccount",SignUp);
-// app.use("/user",Login);
-app.use(exerciserout);
-
-
-
-
+app.use(VideoUploadRoute);
+app.use(SignUp);
+app.use(Login);
+app.use(VideoData);
 
 app.listen(port,()=>{
     console.log(`server started at http://localhost:${port}`);

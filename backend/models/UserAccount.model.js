@@ -14,11 +14,10 @@ const userSchema=new mongoose.Schema({
     },
     verifyCode:{
         type:String,required:true
-    },status:{
-        type:String,default:'pending'
     },
-    role:{
-        type:String,default:'user'
+    creator:{
+        type:Boolean,required:true,default:false
+
     }
 },{
     timestamps:true
