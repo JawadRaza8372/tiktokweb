@@ -37,7 +37,20 @@ const password=req.body.password;
     .catch(e=>res.json({success:false,message:"Not Fatched",responce:e}))
 });
 
-
+Router.patch("/checkLoginStatus/:id",(req,res,next)=>{
+    const id=req.params.id;
+        SignUp.findById(id).then(data=>{res.json({success:true,message:"data fatched",responce:data})
+        console.log(data)}
+        )
+        .catch(e=>res.json({success:false,message:"Not Fatched",responce:e}))
+    });
+    Router.patch("/logoutUser/:id",(req,res,next)=>{
+        const id=req.params.id;
+            SignUp.findByIdAndUpdate(id,{isLogin:false}).then(data=>{res.json({success:true,message:"data fatched",responce:data})
+            console.log(data)}
+            )
+            .catch(e=>res.json({success:false,message:"Not Fatched",responce:e}))
+        });
 
 Router.post("/register",(req,res,next)=>{
         const name=req.body.name;
