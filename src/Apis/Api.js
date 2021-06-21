@@ -1,0 +1,19 @@
+const server="http://localhost:5000";
+
+const createSession=`${server}/createSession`
+const checkSession=`${server}/sessionStatus`
+const startSession=`${server}/loginSession`
+const endSession=`${server}/logout`
+const get_Verification=`${server}/verify`
+const checkPhoneAndPaswd=`${server}/findLogin`
+const registerAccount=`${server}/register`
+const updateProfilePhoto=`${server}/updateProfilePhoto`
+const forgetPaswd=`${server}/ForgotPassword`
+const resetPaswd=`${server}/ResetPassword`
+const getVideoDat=`${server}/getvideoData`
+const postVideoData=`${server}/videoDataUpload`
+const updateVideoDescription=`${server}/videoDataUpdate`
+const delateVideoData=`${server}/delateVideoData`
+const postPhoto=`${server}/addphoto`
+const postVideo=`${server}/addvideo`
+export {createSession,checkSession,startSession,endSession,get_Verification,delateVideoData,postPhoto,postVideo,getVideoDat,postVideoData,updateVideoDescription,forgetPaswd,checkPhoneAndPaswd,registerAccount,updateProfilePhoto,resetPaswd}

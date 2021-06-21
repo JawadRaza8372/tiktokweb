@@ -1,10 +1,10 @@
 import React from 'react'
 import Common from './Common'
 import Content from "../Screens/Components/Content"
-function Home() {
+function Following() {
     return (
-        <Common num="1"/>
+        <Common/>
     )
 }
 
-export default Home
+export default Following

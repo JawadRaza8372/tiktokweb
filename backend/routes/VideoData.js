@@ -31,7 +31,6 @@ res.status(200).json({status:true,message:"uploaded",responce:data})
             const id=req.body.id;
             const description=req.body.description;
             try{
-                const newExercise=new VideoData({userId,videolink,description,track,likes,shares,comments});
                 VideoData.findByIdAndUpdate(id,description).then((data)=> {
                     res.status(200).json({status:true,message:"uploaded",responce:data})
         })

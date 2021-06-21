@@ -4,7 +4,8 @@ const userSessionModel=require("../models/userSession.Modal");
 
 Router.route("/createSession").post((req,res,next)=>{
   let userId=req.body.userId;
-  const newsession=new userSessionModel({userId});
+  let isLogin=false;
+  const newsession=new userSessionModel({userId,isLogin});
   newsession.save().then((data)=>{
             res.send({status:true,message:"sessionCreated",responce:data})
    }).catch(e=>res.send("Error"+e))

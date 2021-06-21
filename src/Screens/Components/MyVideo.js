@@ -3,23 +3,6 @@ import ReactPlayer from "react-player"
 function MyVideo({url}) {
     const [playing, setPlaying] = useState(false);
     const videoRef = useRef(null);
-  
-    useEffect(() => {
-      let handlePlay = (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            videoRef.current.play();
-          } else {
-            videoRef.current.pause();
-          }
-        });
-      };
-  
-      let observer = new IntersectionObserver(handlePlay);
-  
-      observer.observe(videoRef.current);
-    });
-
 
     const onVideoPress = () => {
       if (playing) {
